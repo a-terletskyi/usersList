@@ -2,26 +2,28 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
-## Development server
+Потрібно реалізувати функціонал, а саме:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. При кліку на кнопку Add user запускаєте функцію addUser() яка робить наступне:
+a. Стягуєте дані з полів і формує об’єкт.
+b. Цей об’єкт пушитю в масив.
+c. Поля зачищає.
+d. Запускаєм функцію render() яка генерую всю інфу в таблицю відносно вашого масиву.
 
-## Code scaffolding
+2. При кліку на кнопку Delete запускаєте функцію deleteUser() яка робить наступне:
+a. Дізнаєтеся в якому рядку ви клікнули(тобто індекс).
+b. По цьому індексу видаляємо елемент з масиву.
+c. Запускаєм заново функцію render().
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3. При кліку на кнопку Edit запускаєте функцію editUser() яка робить наступне:
+a. Дізнаєтеся в якому рядку ви клікнули(тобто індекс).
+b. По цьому індексу витягуємо конкретрний елемент(тобто об’єкт) з масиву.
+c. З об’єкт достаємо дані і передаємо в форму(тобто у value інпутів).
+d. Запам’ятовуємо даний індекс в змінну userIndex.
+e. Показуємо кнопку Edit user і приховуємо Add user.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. При кліку на кнопку Edit User запускаєте функцію saveEditUser() яка робить наступне:
+a. Стягуєте дані з полів і формує об’єкт через клас.
+b. Цей об’єкт додається на місце старого об’єкту через userIndex.
+c. Поля зачищає.
+d. Запускаєм функцію render() яка генерую всю інфу в таблицю відносно вашого масиву.
