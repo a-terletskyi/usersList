@@ -1,1 +1,49 @@
-<p>users-list works!</p>
+<div class="wrapper">
+    <form class="registration" #registrationForm>
+        <div class="form-control">
+            <label class="registration__label">Login</label>
+            <input type="text" id="login" class="login__input" name="login" placeholder="Enter login"
+                [(ngModel)]="login">
+            <span class="error-message">{{loginErrMessage}}</span>
+        </div>
+        <div class="form-control">
+            <label class="registration__label">Password</label>
+            <input type="password" id="password" class="password__input" name="password" placeholder="Enter password"
+                [(ngModel)]="password">
+            <span class="error-message">{{passwordErrMessage}}</span>
+        </div>
+        <div class="form-control">
+            <label class="registration__label">Email address</label>
+            <input type="email" id="email" class="email__input" name="email" placeholder="Enter email"
+                [(ngModel)]="email">
+            <span class="error-message">{{emailErrMessage}}</span>
+        </div>
+        <button *ngIf="!isBtn" id="form-add" class="add__btn" (click)="addUser(registrationForm)">Add user</button>
+        <button *ngIf="isBtn" id="form-edit" class="edit__btn" (click)="saveEditUser(registrationForm)">Edit user</button>
+    </form>
+
+    <div class="user-list">
+        <table class="table-list">
+            <thead class="table-head">
+                <tr class="table-head__tr">
+                    <th class="table-head__th">#</th>
+                    <th class="table-head__th">Login</th>
+                    <th class="table-head__th">Password</th>
+                    <th class="table-head__th">Email</th>
+                    <th class="table-head__th">Edit</th>
+                    <th class="table-head__th">Delete</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <tr *ngFor="let user of usersList; index as i">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ user.login }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.email }}</td>
+                    <td><button type="button" class="edit" (click)="editUser(i)">Edit</button></td>
+                    <td><button type="button" class="delete" (click)="deleteUser(i)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
