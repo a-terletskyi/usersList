@@ -44,19 +44,24 @@
 }
 
 .add__btn, .edit__btn {
+    width: 100%;
     padding: 10px 15px;
-    color: rgb(17, 93, 17);
-    background-color: #ffffff;
-    border: solid 1px rgb(17, 93, 17);
-}
-
-.add__btn:hover, .edit__btn:hover {
     color: #ffffff;
-    background-color: rgb(17, 93, 17);
 }
 
-.add__btn:hover, .edit__btn:hover, .edit:hover, .delete:hover {
+.add__btn {
+    background-color: #38c545;
+    border: solid 1px #38c545;
+}
+
+.edit__btn {
+    background-color: #00b4c2;
+    border: solid 1px #00b4c2;
+}
+
+button:hover {
     cursor: pointer;
+    filter: brightness(90%) saturate(90%);
 }
 
 .add__btn:active, .edit__btn:active, .edit:active, .delete:active {
